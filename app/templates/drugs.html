@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  </head>
+  <body>
+    <form action='/predict' method='POST'>
+      <div class="form-group">
+        <label>Age</label> 
+        <div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="Age" id="Age_0" type="radio" aria-describedby="AgeHelpBlock" required="required" class="custom-control-input" value="18-24"> 
+            <label for="Age_0" class="custom-control-label">18-24</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="Age" id="Age_1" type="radio" aria-describedby="AgeHelpBlock" required="required" class="custom-control-input" value="25-34"> 
+            <label for="Age_1" class="custom-control-label">25-34</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="Age" id="Age_2" type="radio" aria-describedby="AgeHelpBlock" required="required" class="custom-control-input" value="35-44"> 
+            <label for="Age_2" class="custom-control-label">35-44</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="Age" id="Age_3" type="radio" aria-describedby="AgeHelpBlock" required="required" class="custom-control-input" value="45-54"> 
+            <label for="Age_3" class="custom-control-label">45-54</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="Age" id="Age_4" type="radio" aria-describedby="AgeHelpBlock" required="required" class="custom-control-input" value="55-64"> 
+            <label for="Age_4" class="custom-control-label">55-64</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="Age" id="Age_5" type="radio" aria-describedby="AgeHelpBlock" required="required" class="custom-control-input" value=""> 
+            <label for="Age_5" class="custom-control-label">65+</label>
+          </div> 
+          <span id="AgeHelpBlock" class="form-text text-muted">Select age interval</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Gender</label> 
+        <div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="Gender" id="Gender_0" type="radio" required="required" class="custom-control-input" value="M"> 
+            <label for="Gender_0" class="custom-control-label">Male</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="Gender" id="Gender_1" type="radio" required="required" class="custom-control-input" value="F"> 
+            <label for="Gender_1" class="custom-control-label">Female</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Education">Education</label> 
+        <div>
+          <select id="Education" name="Education" aria-describedby="EducationHelpBlock" required="required" class="custom-select">
+            <option value="University degree">University degree</option>
+            <option value="Masters degree">Masters degree</option>
+            <option value="Professional certificate/ diploma">Professional certificate/ diploma</option>
+            <option value="Doctorate degree">Doctorate degree</option>
+            <option value="Some college or university, no certificate or degree">No certificate or degree</option>
+            <option value="Left school at 18 years">Left school at 18 years</option>
+            <option value="Left school at 17 years">Left school at 17 years</option>
+            <option value="Left school at 16 years">Left school at 16 years</option>
+            <option value="Left school before 16 years">Left school before 16 years</option>
+          </select> 
+          <span id="EducationHelpBlock" class="form-text text-muted">Select level of education</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Country">Country of residence</label> 
+        <div>
+          <select id="Country" name="Country" required="required" class="custom-select">
+            <option value="UK">UK</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Republic of Ireland">Republic of Ireland</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Ethnicity">Ethnicity</label> 
+        <div>
+          <select id="Ethnicity" name="Ethnicity" required="required" class="custom-select">
+            <option value="White">White</option>
+            <option value="Black">Black</option>
+            <option value="Asian">Asian</option>
+            <option value="Mixed-White/Black">Mixed-White/Black</option>
+            <option value="Mixed-White/Asian">Mixed-White/Asian</option>
+            <option value="Mixed-White/Black">Mixed-White/Black</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="NScore">Neuroticism</label> 
+        <input id="NScore" name="NScore" type="number" max="3.27393" min="-3.46436" step="0.00001" aria-describedby="NScoreHelpBlock" required="required" class="form-control"> 
+        <span id="NScoreHelpBlock" class="form-text text-muted">NEO-FFI-R Neuroticism (real value)</span>
+	  </div>
+      <div class="form-group">
+        <label for="Escore">Extraversion</label> 
+        <input id="Escore" name="Escore" type="number" max="3.27393" min="-3.27393" step="0.00001" aria-describedby="EscoreHelpBlock" required="required" class="form-control"> 
+        <span id="EscoreHelpBlock" class="form-text text-muted">NEO-FFI-R Extraversion (real value)</span>
+      </div>
+      <div class="form-group">
+        <label for="Oscore">Openness to experience</label> 
+        <input id="Oscore" name="Oscore" type="number" max="2.90161" min="-3.27393" step="0.00001" aria-describedby="OscoreHelpBlock" required="required" class="form-control"> 
+        <span id="OscoreHelpBlock" class="form-text text-muted">NEO-FFI-R Openness to experience (real value)</span>
+      </div>
+      <div class="form-group">
+        <label for="Ascore">Agreeableness</label> 
+        <input id="Ascore" name="Ascore" type="number" max="3.46436" min="-3.46436" step="0.00001" aria-describedby="AscoreHelpBlock" required="required" class="form-control"> 
+        <span id="AscoreHelpBlock" class="form-text text-muted">NEO-FFI-R Agreeableness (real value)</span>
+      </div>
+      <div class="form-group">
+        <label for="Cscore">Conscientiousness</label> 
+        <input id="Cscore" name="Cscore" type="number" max="3.46436" min="-3.46436" step="0.00001" aria-describedby="CscoreHelpBlock" required="required" class="form-control"> 
+        <span id="CscoreHelpBlock" class="form-text text-muted">NEO-FFI-R Conscientiousness (real value)</span>
+      </div>
+      <div class="form-group">
+        <label for="Impulsive">Impulsiveness</label> 
+        <input id="Impulsive" name="Impulsive" type="number" max="2.90161" min="-2.55524" step="0.00001" aria-describedby="ImpulsiveHelpBlock" required="required" class="form-control"> 
+        <span id="ImpulsiveHelpBlock" class="form-text text-muted">Impulsiveness measured by BIS-11 (real value)</span>
+      </div>
+      <div class="form-group">
+        <label for="SS">Sensation seeing</label> 
+        <input id="SS" name="SS" type="number" max="1.92173" min="-2.07848" step="0.00001" aria-describedby="SSHelpBlock" required="required" class="form-control"> 
+        <span id="SSHelpBlock" class="form-text text-muted">Sensation seeing measured by ImpSS (real value)</span>
+      </div> 
+        <div class="form-group">
+    <label>Nicotine intake</label> 
+    <div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="Nicotine" id="Nicotine_0" type="radio" class="custom-control-input" value="1" required="required"> 
+        <label for="Nicotine_0" class="custom-control-label">Yes</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="Nicotine" id="Nicotine_1" type="radio" class="custom-control-input" value="0" required="required"> 
+        <label for="Nicotine_1" class="custom-control-label">No</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Caffeine intake</label> 
+    <div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="Caff" id="Caff_0" type="radio" class="custom-control-input" value="1" required="required"> 
+        <label for="Caff_0" class="custom-control-label">Yes</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="Caff" id="Caff_1" type="radio" class="custom-control-input" value="0" required="required"> 
+        <label for="Caff_1" class="custom-control-label">No</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Chocolate intake</label> 
+    <div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="Choc" id="Choc_0" type="radio" class="custom-control-input" value="1" required="required"> 
+        <label for="Choc_0" class="custom-control-label">Yes</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="Choc" id="Choc_1" type="radio" class="custom-control-input" value="0" required="required"> 
+        <label for="Choc_1" class="custom-control-label">No</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Alcohol intake</label> 
+    <div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="Alcohol" id="Alcohol_0" type="radio" class="custom-control-input" value="1" required="required"> 
+        <label for="Alcohol_0" class="custom-control-label">Yes</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="Alcohol" id="Alcohol_1" type="radio" class="custom-control-input" value="0" required="required"> 
+        <label for="Alcohol_1" class="custom-control-label">No</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Cannabis intake</label> 
+    <div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="Cannabis" id="Cannabis_0" type="radio" class="custom-control-input" value="1" required="required"> 
+        <label for="Cannabis_0" class="custom-control-label">Yes</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="Cannabis" id="Cannabis_1" type="radio" class="custom-control-input" value="0" required="required"> 
+        <label for="Cannabis_1" class="custom-control-label">No</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Mushrooms intake</label> 
+    <div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="Mushrooms" id="Mushrooms_0" type="radio" class="custom-control-input" value="1" required="required"> 
+        <label for="Mushrooms_0" class="custom-control-label">Yes</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input name="Mushrooms" id="Mushrooms_1" type="radio" class="custom-control-input" value="0" required="required"> 
+        <label for="Mushrooms_1" class="custom-control-label">No</label>
+      </div>
+    </div>
+  </div> 
+  <div class="form-group">
+	  <div class="form-group">
+        <button name="submit" type="submit" class="btn btn-primary">Get your drug by probability</button>
+      </div>
+    </form>
+  </body>
+</html>
